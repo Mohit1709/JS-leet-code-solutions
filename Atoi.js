@@ -17,15 +17,22 @@ var myAtoi = function (s) {
   for (let i in s) {
     charCode = s.charCodeAt(i);
 
+    //Checking if the char is number
     if (charCode > 47 && charCode < 58) {
       res = res * 10 + (charCode - 48);
       noSign = false;
-    } else if (noSign) {
+    }
+    // Checking if any Sign goes i.e. + -
+    else if (noSign) {
+      // Checking if char is +
       if (charCode === 43) noSign = false;
+      // Checking if char is -
       else if (charCode === 45) {
         isNegative = true;
         noSign = false;
-      } else if (charCode === 32);
+      }
+      // Checking if the char is blank space
+      else if (charCode === 32);
       else break;
     } else break;
   }
